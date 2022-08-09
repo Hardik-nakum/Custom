@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="estate_property_action" model="ir.actions.act_window">
+        <field name="name">Properties</field>
+        <field name="res_model">estate.property</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="estate_property_type_action" model="ir.actions.act_window">
+        <field name="name">Property Types</field>
+        <field name="res_model">estate.property.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="estate_property_tag_action" model="ir.actions.act_window">
+        <field name="name">Property Tags</field>
+        <field name="res_model">estate.property.tag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="estate_property_menu_root"
+              name="Real Estate"
+              sequence="0"/>
+
+    <menuitem id="estate_property_menu_master"
+              name="Advertisement"
+              parent="estate_property_menu_root"
+              sequence="0"/>
+
+    <menuitem id="estate_property_type_menu_master"
+              name="Settings"
+              parent="estate_property_menu_root"
+              sequence="0"/>
+
+    <menuitem id="estate_property_menu_child"
+              name="Properties"
+              parent="estate_property_menu_master"
+              action="estate_property_action"
+              sequence="0"/>
+
+    <menuitem id="estate_property_type_menu_child"
+              name="Property Types"
+              parent="estate_property_type_menu_master"
+              action="estate_property_type_action"
+              sequence="0"/>
+
+    <menuitem id="estate_property_tag_menu_child"
+              name="Property Tags"
+              parent="estate_property_type_menu_master"
+              action="estate_property_tag_action"
+              sequence="1"/>
+
+</odoo>
